@@ -7,6 +7,7 @@ html {
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
+  overflow-x: hidden;
 }
 h2,
 h3,
@@ -144,7 +145,6 @@ hr {
   margin-bottom: 70px;
 }
 .section-title h2 {
-  position: relative;
   margin-top: 10px;
   margin-bottom: 15px;
   padding-bottom: 15px;
@@ -240,7 +240,7 @@ a:focus,
   margin-bottom: 60px;
 }
 header .intro-text {
-  padding-top: 350px;
+  padding-top: 150px;
   padding-bottom: 200px;
   text-align: center;
 }
@@ -460,7 +460,7 @@ header .intro-text {
 /* Contact Section */
 #contact {
   padding: 100px 0 60px;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: linear-gradient(90deg, rgba(60,60,60,1) 0%, rgba(143,141,141,1) 100%);
   color: rgba(255, 255, 255, 0.75);
 }
 #contact .section-title {
@@ -529,6 +529,7 @@ label {
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
+  resize: none;
 }
 #contact .form-control:focus {
   border-color: #999;
@@ -599,8 +600,132 @@ label {
   border-bottom: 2px solid #608dfd;
 }
 
-@media (max-width: 768px) {
+.cont-cards{
+  padding: 50px;
+  overflow-x: scroll;
+  display: flex;
+  justify-content: center;
+  max-height: 500px;
+  background: radial-gradient(circle, rgba(76,77,82,1) 0%, rgba(89,89,97,1) 22%, rgba(155,158,161,1) 100%);
+}
+
+.cont-cards .card{
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #0002;
+  margin: 10px;
+  text-align: center;
+  max-width: 300px;
+  min-width: 250px;
+  background: #fff;
+}
+
+.cont-cards .card:hover{
+  width: calc();
+}
+
+.card .card-image{
+  width: 100%;
+  border-radius: 10px;
+  height: 50%;
+  max-width: 500px;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.card .card-title, .cont-pop-up-cards .card-title{
+  margin-top: 20px;
+}
+
+.card .card-text, .cont-pop-up-cards .card-text{
+  padding: 0 20px 20px 20px;
+}
+
+.cont-pop-up-cards{
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+body::-webkit-scrollbar{
+  width: 5px;
+  background: #aaa;
+}
+
+body::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: #555;
+}
+
+.cont-pop-up-cards::-webkit-scrollbar, .cont-cards::-webkit-scrollbar{
+  height: 10px;
+  background: #aaa;
+}
+
+.cont-pop-up-cards::-webkit-scrollbar-thumb, .cont-cards::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background: #888;
+}
+
+.cont-pop-up-cards .modal-pop .card-pop{
+  border: 1px solid #0000001f;
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.25);
+  text-align: center;
+  max-width: 500px;
+  min-width: 250px;
+  background: #fff;
+  z-index: 30;
+  cursor: pointer;
+}
+
+.card-pop .card-pop-img{
+  width: 100%;
+  height: 60%;
+  max-width: 500px;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+
+.cont-pop-up-cards .active{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont-pop-up-cards .active::after{
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #000000ce;
+  z-index: 20;
+}
+
+.pop-up-row .pop-up-title{
+  margin-top: 60px;
+}
+
+
+@media (max-width: 1100px) {
   #about img {
     margin: 50px 0;
+  }
+  .cont-cards, .cont-pop-up-cards{
+    justify-content: left;
+  }
+}
+
+@media (max-width: 390px) {
+  .intro h1{
+    font-size: 40px;
   }
 }

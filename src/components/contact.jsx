@@ -57,7 +57,7 @@ export const Contact = (props) => {
                         id="name"
                         name="name"
                         className="form-control"
-                        placeholder="Name"
+                        placeholder="Nombre"
                         required
                         onChange={handleChange}
                       />
@@ -79,13 +79,29 @@ export const Contact = (props) => {
                     </div>
                   </div>
                 </div>
+                <div className="row">
+                  <div className="col-md-12">
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        className="form-control"
+                        placeholder="Número de telefono"
+                        required
+                        onChange={handleChange}
+                      />
+                      <p className="help-block text-danger"></p>
+                    </div>
+                  </div>
+                </div>
                 <div className="form-group">
                   <textarea
                     name="message"
                     id="message"
                     className="form-control"
                     rows="4"
-                    placeholder="Message"
+                    placeholder="Mensaje"
                     required
                     onChange={handleChange}
                   ></textarea>
@@ -93,7 +109,7 @@ export const Contact = (props) => {
                 </div>
                 <div id="success"></div>
                 <button type="submit" className="btn btn-custom btn-lg">
-                  Send Message
+                  Enviar mensaje
                 </button>
               </form>
             </div>
