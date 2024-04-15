@@ -1,11 +1,11 @@
 # React JS Landing Page Template
 **
 
-# git clone https://github.com/zahidzta/react_page.git
+```git clone https://github.com/zahidzta/react_page.git```
 **
-# npm install
+```npm install```
 **
-# npm start
+```npm start```
 **
 
 # 🛎️🛎️ Good news! New & improved [V2](https://github.com/issaafalkattan/react-landing-page-template-2021) is out  
